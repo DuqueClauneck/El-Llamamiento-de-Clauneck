@@ -173,12 +173,19 @@ covenant wit Clauneck.</p>
 
 <script>
     function setLang(lang) {
-        document.getElementById('es-content').style.display = lang === 'es' ? 'block' : 'none';
-        document.getElementById('en-content').style.display = lang === 'en' ? 'block' : 'none';
-        const btns = document.querySelectorAll('.lang-btn');
-        btns[0].classList.toggle('active', lang === 'es');
-        btns[1].classList.toggle('active', lang === 'en');
-    }
+    // Control de contenidos de texto
+    document.getElementById('es-content').style.display = lang === 'es' ? 'block' : 'none';
+    document.getElementById('en-content').style.display = lang === 'en' ? 'block' : 'none';
+    
+    // Control de las imágenes
+    document.getElementById('img-es').style.display = lang === 'es' ? 'block' : 'none';
+    document.getElementById('img-en').style.display = lang === 'en' ? 'block' : 'none';
+    
+    // Control visual de los botones de idioma
+    const btns = document.querySelectorAll('.lang-btn');
+    btns[0].classList.toggle('active', lang === 'es');
+    btns[1].classList.toggle('active', lang === 'en');
+}
 </script>
 </body>
 </html>
