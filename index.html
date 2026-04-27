@@ -1,104 +1,181 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Calling of Clauneck | Financial Engineering</title>
+    <title>Ebook Gold & Ebony Edition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --ebano: #0a0a0a;
+            --oro: #d4af37;
+            --oro-brillante: #f1e5ac;
+            --texto: #e0e0e0;
+        }
+
         body {
-            background-color: #0a0a0a;
-            color: #e0e0e0;
-            font-family: 'Georgia', serif;
-            line-height: 1.6;
             margin: 0;
-            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--ebano);
+            color: var(--texto);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            padding: 20px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 1px solid var(--oro);
+            color: var(--oro);
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .lang-btn.active {
+            background: var(--oro);
+            color: var(--ebano);
+        }
+
+        .main-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .product-card {
+            max-width: 1000px;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .book-cover img {
+            width: 100%;
+            border-radius: 4px;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);
+            border: 1px solid #222;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: var(--oro);
+            margin: 0 0 20px 0;
+            line-height: 1.1;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: var(--oro-brillante);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .buy-btn {
+            display: inline-block;
+            background: var(--oro);
+            color: var(--ebano);
+            padding: 20px 40px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 2px;
+            transition: 0.3s;
             text-align: center;
         }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 50px 20px;
+
+        .buy-btn:hover {
+            background: var(--oro-brillante);
+            transform: translateY(-2px);
         }
-        h1 {
-            color: #d4af37; /* Color Oro */
-            font-size: 2.5em;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
+
+        .features {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            font-size: 0.9rem;
+            border-top: 1px solid #222;
+            padding-top: 30px;
         }
-        .subtitle {
-            font-style: italic;
-            color: #888;
-            margin-bottom: 40px;
-        }
-        .sigil-box {
-            border: 1px solid #d4af37;
-            padding: 20px;
-            display: inline-block;
-            margin-bottom: 40px;
-        }
-        .highlight {
-            color: #d4af37;
-            font-weight: bold;
-        }
-        .cta-button {
-            display: inline-block;
-            background-color: #d4af37;
-            color: #0a0a0a;
-            padding: 15px 30px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2em;
-            border-radius: 5px;
-            margin-top: 30px;
-            transition: 0.3s;
-        }
-        .cta-button:hover {
-            background-color: #fff;
-            transform: scale(1.05);
-        }
-        .section {
-            margin-bottom: 60px;
-            text-align: left;
-        }
-        .footer {
-            font-size: 0.8em;
+
+        .feature { color: #888; }
+        .feature span { color: var(--oro); margin-right: 8px; }
+
+        footer {
+            padding: 40px;
+            text-align: center;
+            font-size: 0.8rem;
             color: #444;
-            margin-top: 100px;
+        }
+
+        @media (max-width: 850px) {
+            .product-card { grid-template-columns: 1fr; text-align: center; }
+            h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="sigil-box">
-        <h2 style="margin:0; color:#d4af37;">CKC</h2>
-    </div>
+<header>
+    <button class="lang-btn active" onclick="setLang('es')">ES</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+</header>
 
-    <h1>THE CALLING OF CLAUNECK</h1>
-    <p class="subtitle">A guide to forging a strategic partnership with the Treasurer of the Unseen.</p>
+<div class="main-container">
+    <div class="product-card">
+        <div class="book-cover">
+            <img src="URL_DE_TU_PORTADA.jpg" alt="Cover">
+        </div>
 
-    <div class="section">
-        <p>"If you seek enlightenment, meditate. <span class="highlight">If you seek capital, call Clauneck.</span>" [cite: 85]</p>
-        <p>This is not a book for the idle curious, but for the decisive. You are about to stop being a spectator of others' fortunes and become the architect of your own empire. [cite: 53, 55]</p>
-    </div>
+        <div class="content-box">
+            <div id="es-content">
+                <h1>Título de tu Ebook</h1>
+                <p class="tagline">La guía definitiva diseñada para el éxito.</p>
+                <p>Descubre el sistema paso a paso que te permitirá dominar tu temática de manera profesional.</p>
+                <a href="TU_LINK_LEMON_SQUEEZY_ES" class="buy-btn">COMPRAR AHORA — 19€</a>
+                <div class="features">
+                    <div class="feature"><span>✦</span> PDF Alta Resolución</div>
+                    <div class="feature"><span>✦</span> Formato ePub</div>
+                </div>
+            </div>
 
-    <div class="section">
-        <h2 style="color:#d4af37;">Pragmatism Over Philosophy</h2>
-        <p>Unlike other entities, Clauneck is <span class="highlight">amoral and earthly</span>. He understands debt, business, and market opportunities. This is a pure business relationship based on the law of reciprocity: <strong>Do ut Des</strong> (I give so that you may give). [cite: 72, 78, 75, 92]</p>
-    </div>
-
-    <div class="section">
-        <h2 style="color:#d4af37;">The Covenant Ark</h2>
-        <p>Learn to construct the physical anchor point where the spirit's power is concentrated. A meticulous method distilled from the Grimorium Verum and the Ars Goetia, tempered by years of personal practice. [cite: 124, 20]</p>
-    </div>
-
-    <a href="https://clauneck.lemonsqueezy.com/checkout/buy/1603f062-be11-421b-9c6f-2701f91d7db4" class="cta-button">ACTIVATE THE COVENANT - $24.90</a>
-
-    <div class="footer">
-        <p>© 2025 Duque Clauneck. All rights reserved. [cite: 9]</p>
-        <p>For informational and educational purposes only. Results depend on individual discipline and action. [cite: 16, 88]</p>
+            <div id="en-content" style="display:none;">
+                <h1>Your Ebook Title</h1>
+                <p class="tagline">The definitive guide designed for success.</p>
+                <p>Discover the step-by-step system to master your topic professionally.</p>
+                <a href="TU_LINK_LEMON_SQUEEZY_EN" class="buy-btn">BUY NOW — $19</a>
+                <div class="features">
+                    <div class="feature"><span>✦</span> High Res PDF</div>
+                    <div class="feature"><span>✦</span> ePub Format</div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
+<script>
+    function setLang(lang) {
+        document.getElementById('es-content').style.display = lang === 'es' ? 'block' : 'none';
+        document.getElementById('en-content').style.display = lang === 'en' ? 'block' : 'none';
+        const btns = document.querySelectorAll('.lang-btn');
+        btns[0].classList.toggle('active', lang === 'es');
+        btns[1].classList.toggle('active', lang === 'en');
+    }
+</script>
 </body>
 </html>
