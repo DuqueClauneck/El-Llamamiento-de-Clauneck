@@ -19,9 +19,38 @@
             background-color: var(--ebano);
             color: var(--texto);
             display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            padding: 20px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 1px solid var(--oro);
+            color: var(--oro);
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .lang-btn.active {
+            background: var(--oro);
+            color: var(--ebano);
+        }
+
+        .main-container {
+            flex: 1;
+            display: flex;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            padding: 20px;
             text-align: center;
         }
 
@@ -34,7 +63,7 @@
 
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 3rem;
+            font-size: 2.8rem;
             color: var(--oro);
             margin-bottom: 20px;
         }
@@ -43,6 +72,7 @@
             font-size: 1.1rem;
             line-height: 1.6;
             margin-bottom: 30px;
+            color: #ccc;
         }
 
         .back-btn {
@@ -65,12 +95,35 @@
 </head>
 <body>
 
-<div class="thank-you-box">
-    <h1>¡Gracias por tu compra!</h1>
-    <p>El ritual ha comenzado. Deberías recibir un correo de <strong>Gumroad</strong> con el enlace de descarga de <em>El Llamado de Clauneck</em> en unos instantes.</p>
-    <p>Si tienes algún problema con la descarga, puedes contactarme directamente respondiendo al correo de confirmación.</p>
-    <a href="index.html" class="back-btn">Volver al inicio</a>
+<header>
+    <button class="lang-btn active" onclick="setLang('es')">ES</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+</header>
+
+<div class="main-container">
+    <div id="es-content" class="thank-you-box">
+        <h1>¡Gracias por tu compra!</h1>
+        <p>El ritual ha comenzado. Recibirás un correo de <strong>Gumroad</strong> con el enlace de descarga de <em>El Llamado de Clauneck</em> en unos instantes.</p>
+        <a href="index.html" class="back-btn">Volver al inicio</a>
+    </div>
+
+    <div id="en-content" class="thank-you-box" style="display:none;">
+        <h1>Thank you for your purchase!</h1>
+        <p>The ritual has begun. You will receive an email from <strong>Gumroad</strong> with the download link for <em>The Calling of Clauneck</em> shortly.</p>
+        <a href="index.html" class="back-btn">Back to Home</a>
+    </div>
 </div>
+
+<script>
+    function setLang(lang) {
+        document.getElementById('es-content').style.display = lang === 'es' ? 'block' : 'none';
+        document.getElementById('en-content').style.display = lang === 'en' ? 'block' : 'none';
+        
+        const btns = document.querySelectorAll('.lang-btn');
+        btns[0].classList.toggle('active', lang === 'es');
+        btns[1].classList.toggle('active', lang === 'en');
+    }
+</script>
 
 </body>
 </html>
