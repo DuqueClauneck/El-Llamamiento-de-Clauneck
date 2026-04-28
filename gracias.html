@@ -122,7 +122,11 @@
         const btns = document.querySelectorAll('.lang-btn');
         btns[0].classList.toggle('active', lang === 'es');
         btns[1].classList.toggle('active', lang === 'en');
-    }
+    }// Detectar automáticamente el idioma por la URL
+const urlParams = new URLSearchParams(window.location.search);
+if (urlParams.get('lang') === 'en') {
+    setLang('en');
+}
 </script>
 
 </body>
