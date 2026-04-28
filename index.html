@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EL LLAMADO DE CLAUNECK</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <script src="https://gumroad.com/js/gumroad.js"></script>
+
     <style>
         :root {
             --ebano: #0a0a0a;
@@ -22,7 +24,6 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            
         }
 
         header {
@@ -67,10 +68,10 @@
 
         .book-cover img {
             width: 100%;
-    max-width: 450px; /* Ajusta según el tamaño de tus portadas */
-    border-radius: 4px;
-    box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);
-    border: 1px solid #222;
+            max-width: 450px;
+            border-radius: 4px;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);
+            border: 1px solid #222;
         }
 
         h1 {
@@ -99,6 +100,8 @@
             border-radius: 2px;
             transition: 0.3s;
             text-align: center;
+            border: none;
+            cursor: pointer;
         }
 
         .buy-btn:hover {
@@ -129,9 +132,9 @@
         @media (max-width: 850px) {
             .product-card { grid-template-columns: 1fr; text-align: center; }
             h1 { font-size: 2.5rem; }
+            .features { grid-template-columns: 1fr; }
         }
-    </style
-        <script src="https://gumroad.com/js/gumroad.js"></script>
+    </style>
 </head>
 <body>
 
@@ -143,56 +146,61 @@
 <div class="main-container">
     <div class="product-card">
         <div class="book-cover">
-    <img id="img-es" src="portada español.png" alt="Portada en Español">
-    
-    <img id="img-en" src="portada ingles.png" alt="English Cover" style="display:none;">
-</div>
+            <img id="img-es" src="portada español.png" alt="Portada en Español">
+            <img id="img-en" src="portada ingles.png" alt="English Cover" style="display:none;">
+        </div>
 
         <div class="content-box">
             <div id="es-content">
                 <h1>El Llamado de Clauneck</h1>
-                <p class="tagline">Un libro sobre mi experiencia y practica personal.</p>
+                <p class="tagline">Un libro sobre mi experiencia y práctica personal.</p>
                 <p>Descubre el sistema paso a paso que te permitirá hacer un pacto con Clauneck.</p>
                 
-       
-        <a href=//thecallingofclauneck.gumroad.com/l/espanol?wanted=true&redirect_url=https://el-llamamiento-de-clauneck.com/gracias.html class="buy-btn gumroad-button">COMPRAR AHORA</a>
-            
+                <a href=https://thecallingofclauneck.gumroad.com/l/espanol?wanted=true class="buy-btn gumroad-button">COMPRAR AHORA — 9.9€</a>
+                
+                <div class="features">
                     <div class="feature"><span>✦</span> PDF Alta Resolución</div>
-                    
+                    <div class="feature"><span>✦</span> Acceso Instantáneo</div>
                 </div>
             </div>
 
             <div id="en-content" style="display:none;">
                 <h1>The Calling of Clauneck</h1>
                 <p class="tagline">A book on my experience and personal practice.</p>
-                <p>Discover the step-by-step system to master your 
-covenant with Clauneck.</p>
-        <a href=https://thecallingofclauneck.gumroad.com/l/english?wanted=trueredirect=true class="buy-btn gumroad-button">BUY NOW — $9.9</a>
+                <p>Discover the step-by-step system to master your covenant with Clauneck.</p>
+                
+                <a href=https://thecallingofclauneck.gumroad.com/l/english?wanted=true class="buy-btn gumroad-button">BUY NOW — $9.9</a>
                 
                 <div class="features">
                     <div class="feature"><span>✦</span> High Res PDF</div>
-                    
+                    <div class="feature"><span>✦</span> Instant Access</div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+<footer>
+    &copy; 2024 EL LLAMADO DE CLAUNECK
+</footer>
+
 <script>
     function setLang(lang) {
-    // Control de contenidos de texto
-    document.getElementById('es-content').style.display = lang === 'es' ? 'block' : 'none';
-    document.getElementById('en-content').style.display = lang === 'en' ? 'block' : 'none';
-    
-    // Control de las imágenes
-    document.getElementById('img-es').style.display = lang === 'es' ? 'block' : 'none';
-    document.getElementById('img-en').style.display = lang === 'en' ? 'block' : 'none';
-    
-    // Control visual de los botones de idioma
-    const btns = document.querySelectorAll('.lang-btn');
-    btns[0].classList.toggle('active', lang === 'es');
-    btns[1].classList.toggle('active', lang === 'en');
-}
+        // Cambiar visibilidad de textos
+        document.getElementById('es-content').style.display = lang === 'es' ? 'block' : 'none';
+        document.getElementById('en-content').style.display = lang === 'en' ? 'block' : 'none';
+        
+        // Cambiar visibilidad de imágenes
+        document.getElementById('img-es').style.display = lang === 'es' ? 'block' : 'none';
+        document.getElementById('img-en').style.display = lang === 'en' ? 'block' : 'none';
+        
+        // Cambiar estado activo de botones
+        const btns = document.querySelectorAll('.lang-btn');
+        btns[0].classList.toggle('active', lang === 'es');
+        btns[1].classList.toggle('active', lang === 'en');
+    }
 </script>
+
 </body>
 </html>
+
