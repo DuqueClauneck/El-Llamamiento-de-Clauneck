@@ -128,7 +128,26 @@
             font-size: 0.8rem;
             color: #444;
         }
+/* Esto hace que los botones se pongan uno sobre otro y tengan espacio */
+.cta-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+    margin-top: 20px;
+}
 
+/* Esto le da el estilo "premium" al botón de Amazon */
+.amazon-btn {
+    background: transparent !important;
+    border: 1px solid #444 !important;
+    color: #bbb !important;
+}
+
+.amazon-btn:hover {
+    border-color: var(--oro) !important;
+    color: var(--oro) !important;
+    background: #111 !important;
+    }
         @media (max-width: 850px) {
             .product-card { grid-template-columns: 1fr; text-align: center; }
             h1 { font-size: 2.5rem; }
@@ -157,6 +176,7 @@
                 <p>Descubre el sistema paso a paso que te permitirá hacer un pacto con Clauneck.</p>
                 
                 <a href=https://thecallingofclauneck.gumroad.com/l/espanol?wanted=true class="buy-btn gumroad-button">COMPRAR AHORA — 9.9€</a>
+                <a href=https://www.amazon.es/dp/B0GYLGJPDM target="_blank" class="buy-btn amazon-btn">EDICIÓN TAPA BLANDA (Amazon)</a>
                 
                 <div class="features">
                     <div class="feature"><span>✦</span> PDF Alta Resolución</div>
@@ -170,7 +190,7 @@
                 <p>Discover the step-by-step system to master your covenant with Clauneck.</p>
                 
                 <a href=https://thecallingofclauneck.gumroad.com/l/english?wanted=true class="buy-btn gumroad-button">BUY NOW — $9.9</a>
-                
+                <a href=https://www.amazon.com/dp/B0GYKNCB8Q target="_blank" class="buy-btn amazon-btn">PAPERBACK EDITION (Amazon)</a>
                 <div class="features">
                     <div class="feature"><span>✦</span> High Res PDF</div>
                     <div class="feature"><span>✦</span> Instant Access</div>
@@ -181,7 +201,7 @@
 </div>
 
 <footer>
-    &copy; 2024 EL LLAMADO DE CLAUNECK
+    &copy; 2026 EL LLAMADO DE CLAUNECK
 </footer>
 
 <script>
